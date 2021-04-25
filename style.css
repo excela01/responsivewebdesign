@@ -1,0 +1,146 @@
+/* custom prperties: */
+:root{
+    --clr--primary-200: #F3EED9;
+    --clr--primary-500: #824936;
+
+    --clr-neutral: #fff;
+    --clr--neutral-900: #222c2a;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-coffee: 'Playfair Display', serif;
+
+}
+
+
+*,
+*::before,
+*::after{
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.3125rem;
+    line-height: 1.61;
+}
+
+
+body,
+h1,
+h2,
+h3,
+p{
+    margin: 0;
+}
+
+
+
+h1,
+h2,
+h3{
+    color: var(--clr--primary-500);
+    font-family: var(--ff-coffee);
+    line-height: 1;
+    font-weight: 900;
+   
+}
+
+h2,
+h3,
+p{
+    margin-bottom: 1em;
+}
+
+header,
+section{
+    padding: 3rem 0;
+}
+
+@media  (min-width: 639px){
+    header,
+    section{
+    padding: 7rem 0;
+    }
+}
+    
+
+.container{
+    margin-inline: auto;
+    /* margin inline affects only the left and right only,
+     while margin-block affectstop and bottom. we can also use |margin: 0 auto; */
+     width: min(90%, 70.5rem);
+}
+
+.split{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 639px){
+    .split{
+        flex-direction: row;
+    }
+    /* to get equal columns, we do  whats below */
+    .split > * {
+        flex-basis: 100%;
+    }
+    .split * + * {
+        margin-left: 2em;
+        /* the .split * + *: 
+        is an adjacent selector for all elements with a sibling before them */
+    }
+}
+
+.container--narrow{
+    max-width: 33rem;
+}
+/* .container2{
+   margin-inline: auto;
+    width: 90%;
+    max-width: 100%;
+    display: block;
+}  */
+
+
+@media (max-width: 638px) {
+.invert {
+   flex-direction: column-reverse;
+}    
+}
+
+
+.text-center{
+    text-align: center;
+}
+img{
+    /* width: min(90%, 70.5rem);
+    resize: vertical; */
+    max-width: 100%;
+    display: block;
+}
+.bg-light{ 
+
+    background-color: var(--clr--primary-200);
+}
+
+.bg-dark{
+    color: var(--clr-neutral);
+
+     background-color: var(--clr--neutral-900);
+}
+
+.bg-coffee{ 
+    color: var(--clr-neutral);
+    background-color: var(--clr--primary-500);
+}
+
+.bg-dark h2,
+.bg-coffee h2{
+    color: var(--clr--primary-200);
+}
+
+footer{
+    font-family: var(--clr-neutral);
+}
+
+
